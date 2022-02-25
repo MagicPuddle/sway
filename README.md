@@ -1,4 +1,4 @@
-# MagicPuddle - Sway
+# Sway
 
 *Sway window manager configuration files*
 
