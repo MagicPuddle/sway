@@ -1,9 +1,4 @@
-Garuda  Sway-WM CheatSheet : 
-
-- Sway is documentated through man pages unlike i3.To get a overview of what to expect you can read 'man 5 sway'. The pages are then spilt into topics - some the 
-important ones are listed at the bottom of the document. Waybar is also documented through man pages - 'man 5 waybar'. 
-
-- Our file structure is spilt for easier use - the names of the files eg; 'output' referring to the part they play. 
+ Sway-WM CheatSheet : 
 
  = Super Key
 
