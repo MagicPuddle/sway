@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MagicPuddle Sway Window Manager Config</title>
+    <title>MagicPuddle Sway Config</title>
     <style>
         * {
             margin: 0;
@@ -16,76 +16,84 @@
             background-color: #121212;
             font-family: 'Arial', sans-serif;
             color: #fff;
-            height: 100vh;
-            overflow-x: hidden;
+            line-height: 1.6;
+            padding: 20px;
         }
 
-        h1, h2, h3 {
+        h1, h2 {
             color: #00ffcc;
             text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
         }
 
         h1 {
-            font-size: 64px;
+            font-size: 2.5rem;
             text-align: center;
-            margin-top: 10vh;
-            text-transform: uppercase;
-            letter-spacing: 5px;
+            margin-top: 2rem;
+            letter-spacing: 2px;
         }
 
         .neon-text {
             text-align: center;
-            font-size: 24px;
-            margin-top: 10px;
+            font-size: 1.2rem;
+            margin: 10px 0 20px;
             color: #ff00ff;
             text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
             animation: neon 1.5s ease-in-out infinite alternate;
         }
 
-        .content {
-            margin-top: 40px;
-            padding: 20px;
-            text-align: center;
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
         }
 
-        .section-title {
-            font-size: 32px;
-            color: #00ffcc;
-            margin-bottom: 15px;
-            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        section {
+            margin: 1.5rem 0;
+            background-color: #1e1e1e;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1rem;
+            color: #ddd;
         }
 
         .repo-link {
-            color: #ff00ff;
+            display: inline-block;
+            color: #fff;
+            background-color: #ff00ff;
             text-decoration: none;
-            font-size: 20px;
-            padding: 5px 15px;
-            border: 2px solid #ff00ff;
-            border-radius: 5px;
+            font-size: 1rem;
+            padding: 10px 20px;
+            border-radius: 30px;
             transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
         }
 
         .repo-link:hover {
-            background-color: #ff00ff;
-            color: #121212;
-            box-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+            background-color: #00ffcc;
+            box-shadow: 0 0 20px #00ffcc, 0 0 40px #00ffcc;
         }
 
         .config-preview {
-            margin-top: 40px;
-            background-color: rgba(0, 0, 0, 0.8);
+            margin-top: 10px;
+            background-color: #161616;
             border-radius: 12px;
-            padding: 20px;
-            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+            padding: 15px;
+            box-shadow: 0 0 10px #00ffcc;
         }
 
         .config-preview pre {
             color: #00ffcc;
-            font-size: 18px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+            font-size: 0.9rem;
             font-family: 'Courier New', monospace;
+            overflow-x: auto;
         }
 
         @keyframes neon {
@@ -97,42 +105,40 @@
             }
         }
 
-        .footer {
-            position: fixed;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 18px;
-            color: #ff00ff;
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            color: #888;
+            font-size: 0.9rem;
         }
 
-        .footer a {
+        footer a {
             text-decoration: none;
             color: #ff00ff;
         }
 
-        .footer a:hover {
-            text-decoration: underline;
+        footer a:hover {
+            color: #00ffcc;
         }
     </style>
 </head>
 <body>
-    <h1>MagicPuddle Sway Window Manager Config</h1>
-    <div class="neon-text">Futuristic, Customizable, and Efficient</div>
+    <div class="container">
+        <h1>MagicPuddle Sway Config</h1>
+        <div class="neon-text">Futuristic, Customizable, and Efficient</div>
 
-    <div class="content">
         <section>
-            <h2 class="section-title">About This Repository</h2>
+            <h2>About This Repository</h2>
             <p>This repository contains configuration files for setting up the Sway Window Manager with a MagicPuddle theme, providing a sleek, modern, and fully functional environment.</p>
         </section>
 
         <section>
-            <h2 class="section-title">Repository Details</h2>
+            <h2>Repository Details</h2>
             <a href="https://github.com/mcinotti/magicpuddle-sway-config" class="repo-link" target="_blank">Visit GitHub Repository</a>
         </section>
 
         <section>
-            <h2 class="section-title">Sample Configuration</h2>
+            <h2>Sample Configuration</h2>
             <div class="config-preview">
                 <pre>
 # Sway Window Manager config for MagicPuddle OS
@@ -154,8 +160,8 @@ workspace $ws1
         </section>
     </div>
 
-    <div class="footer">
+    <footer>
         <p>Designed by <a href="https://github.com/mcinotti" target="_blank">Martin</a></p>
-    </div>
+    </footer>
 </body>
 </html>
