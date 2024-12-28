@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>MagicPuddle OS</title>
+    <title>MagicPuddle Sway Window Manager Config</title>
     <style>
         * {
             margin: 0;
@@ -13,64 +13,82 @@
         }
 
         body {
-            background-color: #1a1a1a;
+            background-color: #121212;
             font-family: 'Arial', sans-serif;
-            overflow: hidden;
-            height: 100vh;
             color: #fff;
+            height: 100vh;
+            overflow-x: hidden;
         }
 
-        .neon-text {
-            font-size: 48px;
-            text-align: center;
+        h1, h2, h3 {
             color: #00ffcc;
-            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ccff, 0 0 40px #ff00ff;
-            animation: neon 1.5s ease-in-out infinite alternate;
+            text-shadow: 0 0 15px #00ffcc, 0 0 30px #00ffcc;
         }
 
         h1 {
-            margin-top: 20vh;
-            font-size: 72px;
-            color: #fff;
+            font-size: 64px;
             text-align: center;
+            margin-top: 10vh;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            animation: glow 1.5s ease-in-out infinite alternate;
+            letter-spacing: 5px;
         }
 
-        .glow {
-            text-shadow: 0 0 15px #ff0080, 0 0 30px #ff0080, 0 0 45px #ff0080;
+        .neon-text {
+            text-align: center;
+            font-size: 24px;
+            margin-top: 10px;
+            color: #ff00ff;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            animation: neon 1.5s ease-in-out infinite alternate;
         }
 
-        .container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            height: 100%;
+        .content {
+            margin-top: 40px;
+            padding: 20px;
+            text-align: center;
         }
 
-        .neon-button {
-            padding: 15px 30px;
-            margin-top: 20px;
-            border: 2px solid #00ffcc;
-            border-radius: 8px;
-            background-color: transparent;
+        .section-title {
+            font-size: 32px;
+            color: #00ffcc;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+        }
+
+        .repo-link {
+            color: #ff00ff;
+            text-decoration: none;
+            font-size: 20px;
+            padding: 5px 15px;
+            border: 2px solid #ff00ff;
+            border-radius: 5px;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+        }
+
+        .repo-link:hover {
+            background-color: #ff00ff;
+            color: #121212;
+            box-shadow: 0 0 30px #ff00ff, 0 0 60px #ff00ff;
+        }
+
+        .config-preview {
+            margin-top: 40px;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+        }
+
+        .config-preview pre {
             color: #00ffcc;
             font-size: 18px;
-            text-transform: uppercase;
-            cursor: pointer;
-            transition: all 0.3s ease-in-out;
-            box-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            font-family: 'Courier New', monospace;
         }
 
-        .neon-button:hover {
-            background-color: #00ffcc;
-            color: #1a1a1a;
-            box-shadow: 0 0 30px #00ffcc, 0 0 60px #00ffcc, 0 0 90px #00ffcc;
-        }
-
-        @keyframes glow {
+        @keyframes neon {
             0% {
                 text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
             }
@@ -79,42 +97,65 @@
             }
         }
 
-        @keyframes neon {
-            0% {
-                text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc;
-            }
-            100% {
-                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff, 0 0 40px #ff00ff;
-            }
+        .footer {
+            position: fixed;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 18px;
+            color: #ff00ff;
         }
 
-        .neon-box {
-            margin-top: 50px;
-            width: 300px;
-            height: 200px;
-            border: 2px solid #ff00ff;
-            background-color: rgba(0, 0, 0, 0.7);
-            border-radius: 12px;
-            box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-            animation: neon-box 1.5s ease-in-out infinite alternate;
+        .footer a {
+            text-decoration: none;
+            color: #ff00ff;
         }
 
-        @keyframes neon-box {
-            0% {
-                box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
-            }
-            100% {
-                box-shadow: 0 0 20px #00ccff, 0 0 40px #00ccff;
-            }
+        .footer a:hover {
+            text-decoration: underline;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 class="glow">Welcome to MagicPuddle OS</h1>
-        <div class="neon-text">A Futuristic Experience</div>
-        <button class="neon-button">Get Started</button>
-        <div class="neon-box"></div>
+    <h1>MagicPuddle Sway Window Manager Config</h1>
+    <div class="neon-text">Futuristic, Customizable, and Efficient</div>
+
+    <div class="content">
+        <section>
+            <h2 class="section-title">About This Repository</h2>
+            <p>This repository contains configuration files for setting up the Sway Window Manager with a MagicPuddle theme, providing a sleek, modern, and fully functional environment.</p>
+        </section>
+
+        <section>
+            <h2 class="section-title">Repository Details</h2>
+            <a href="https://github.com/mcinotti/magicpuddle-sway-config" class="repo-link" target="_blank">Visit GitHub Repository</a>
+        </section>
+
+        <section>
+            <h2 class="section-title">Sample Configuration</h2>
+            <div class="config-preview">
+                <pre>
+# Sway Window Manager config for MagicPuddle OS
+
+# General Settings
+output * resolution 1920x1080
+font pango:Arial 10
+
+# Keybinds
+bindsym $mod+Return exec alacritty
+bindsym $mod+d exec dmenu_run
+bindsym $mod+Shift+q kill
+
+# Workspaces
+set $ws1 "1"
+workspace $ws1
+                </pre>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>Designed by <a href="https://github.com/mcinotti" target="_blank">Martin</a></p>
     </div>
 </body>
 </html>
